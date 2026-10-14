@@ -1,0 +1,12 @@
+{
+  "appliances_max_wh": 1080.0,
+  "appliances_mean_wh": 97.6949581960983,
+  "appliances_median_wh": 60.0,
+  "columns": 28,
+  "duplicate_rows": 0,
+  "end": "2016-05-27 18:00:00",
+  "lights_mean_wh": 3.8018748416518875,
+  "missing_cells": 0,
+  "rows": 19735,
+  "start": "2016-01-11 17:00:00"
+}
