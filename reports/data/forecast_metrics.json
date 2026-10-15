@@ -1,0 +1,78 @@
+{
+  "features": [
+    "appliances_lag_1_wh",
+    "appliances_lag_2_wh",
+    "appliances_trailing_3h_mean_wh",
+    "lights_last_hour_wh",
+    "T_out_last_hour_mean",
+    "RH_out_last_hour_mean",
+    "Windspeed_last_hour_mean",
+    "Visibility_last_hour_mean",
+    "Tdewpoint_last_hour_mean",
+    "target_hour_sin",
+    "target_hour_cos",
+    "target_day_of_week",
+    "target_is_weekend"
+  ],
+  "model_parameters": {
+    "random_forest": {
+      "max_depth": 10,
+      "min_samples_leaf": 4,
+      "n_estimators": 200,
+      "n_jobs": 1,
+      "random_state": 42
+    },
+    "ridge": {
+      "alpha": 10.0,
+      "standardized": true
+    }
+  },
+  "selected_model": "random_forest",
+  "selection_metric": "validation MAE (Wh)",
+  "split": {
+    "test_end": "2016-05-27 16:00:00",
+    "test_rows": 658,
+    "test_start": "2016-04-30 07:00:00",
+    "train_end": "2016-04-02 21:00:00",
+    "train_rows": 1971,
+    "train_start": "2016-01-11 19:00:00",
+    "validation_end": "2016-04-30 06:00:00",
+    "validation_rows": 657,
+    "validation_start": "2016-04-02 22:00:00"
+  },
+  "target": "total appliance energy in the next complete hour (Wh)",
+  "test_metrics": {
+    "persistence": {
+      "mae_wh": 198.82978723404256,
+      "r2": 0.22509514695084742,
+      "rmse_wh": 372.23407512871535
+    },
+    "random_forest": {
+      "mae_wh": 185.16931467305417,
+      "r2": 0.45577218857602275,
+      "rmse_wh": 311.9480694621374
+    },
+    "ridge": {
+      "mae_wh": 197.24847453233576,
+      "r2": 0.41432941826689684,
+      "rmse_wh": 323.6075470199729
+    }
+  },
+  "validation_metrics": {
+    "random_forest": {
+      "mae_wh": 212.32377521663628,
+      "r2": 0.4469828471116498,
+      "rmse_wh": 369.5918031482081
+    },
+    "ridge": {
+      "mae_wh": 224.46254447888475,
+      "r2": 0.40800855573814787,
+      "rmse_wh": 382.3937143567669
+    }
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.7.2"
+  }
+}
